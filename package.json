@@ -1,57 +1,47 @@
 {
   "name": "reddit-slim",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@mikro-orm/cli": "^4.2.1",
-    "@mikro-orm/core": "^4.2.1",
-    "@mikro-orm/migrations": "^4.2.1",
-    "@mikro-orm/postgresql": "^4.2.1",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "pg": "^8.4.1",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "react-scripts": "3.4.4",
-    "ts-node": "^9.0.0",
-    "typescript": "~3.7.2"
+  "version": "1.0.0",
+  "description": "A lite clone of Reddit. Features include: - Users can make posts - Users can upvote/downvote posts - Users can save posts - Users can login",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+    "start2": "ts-node src/index.ts",
+    "dev2": "nodemon --exec ts-node src/index.ts"
   },
-  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bshaw89/reddit-slim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bshaw89/reddit-slim/issues"
+  },
+  "homepage": "https://github.com/bshaw89/reddit-slim#readme",
+  "devDependencies": {
+    "@types/node": "^14.14.3",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "@mikro-orm/cli": "^4.2.3",
+    "@mikro-orm/core": "^4.2.3",
+    "@mikro-orm/migrations": "^4.2.3",
+    "@mikro-orm/postgresql": "^4.2.3",
+    "pg": "^8.4.1"
+  },
   "mikro-orm": {
     "useTsNode": true,
-    "tsConfigPath": "./tsconfig.orm.json",
     "configPaths": [
-      "./src/mikro-orm.config.tsx"
+      "./src/mikro-orm.config.ts",
+      "./dist/mikro-orm.config.js"
     ]
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev2": "nodemon --exec node src/index.tsx"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6"
+  "resolutions": {
+    "knex": "0.21.6"
   }
 }
